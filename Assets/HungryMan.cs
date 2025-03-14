@@ -10,6 +10,7 @@ public class HungryMan : MonoBehaviour
     public Text livesUI;
     public int localScore;
     public float localSpeed;
+    public GameObject bulletPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +44,10 @@ public class HungryMan : MonoBehaviour
         {
             this.transform.position += new Vector3(GameManager.speed, 0f, 0f);
             this.transform.rotation = Quaternion.Euler(0f, 360f, 0f);
+        }
+        else if(Input.GetMouseButtonDown(0))
+        {
+            Instantiate(bulletPrefab);
         }
     }
 
