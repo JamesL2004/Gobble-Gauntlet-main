@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour
 {
     GameObject player;
     float bulletDirection;
-    float startPosition;
     float bulletSpeed = 0.005f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,7 +50,7 @@ public class Bullet : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        else if (other.transform.gameObject.name.EndsWith("Wall"))
+        else if (other.transform.gameObject.name.Contains("Wall"))
         {
             Destroy(this.gameObject);
         }
