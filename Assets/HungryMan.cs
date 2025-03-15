@@ -72,7 +72,7 @@ public class HungryMan : MonoBehaviour
             Destroy(other.gameObject);
             livesUI.text = "Lives: " + GameManager.lives.ToString();
         }
-        else if (other.transform.gameObject.name.StartsWith("Wall") || other.transform.gameObject.name.StartsWith("Wander") || other.transform.gameObject.name.StartsWith("Seek"))
+        else if (other.transform.gameObject.name.StartsWith("WallA") || other.transform.gameObject.name.StartsWith("Wander") || other.transform.gameObject.name.StartsWith("Seek"))
         {
             Scene currentScene = SceneManager.GetActiveScene();
             if (GameManager.lives == 1)
