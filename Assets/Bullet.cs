@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("HungryMan");
-        bulletDirection = player.transform.rotation.eulerAngles.y;
+        bulletDirection = Mathf.Round(player.transform.rotation.eulerAngles.y);
         this.transform.rotation = Quaternion.Euler(0f, bulletDirection, 0f);
         this.transform.position = player.transform.position;
         print(bulletDirection);
@@ -24,15 +24,15 @@ public class Bullet : MonoBehaviour
         {
             this.transform.position -= new Vector3(0f, 0f, bulletSpeed);
         }
-        else if(bulletDirection == 180f)
+        else if (bulletDirection == 180f)
         {
             this.transform.position -= new Vector3(bulletSpeed, 0f, 0f);
         }
-        else if(bulletDirection == 270f)
+        else if (bulletDirection == 270f)
         {
             this.transform.position += new Vector3(0f, 0f, bulletSpeed);
         }
-        else if(bulletDirection == 360f)
+        else if (bulletDirection == 360f || bulletDirection == 0f)
         {
             this.transform.position += new Vector3(bulletSpeed, 0f, 0f);
         }

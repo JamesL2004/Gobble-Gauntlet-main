@@ -295,6 +295,7 @@ GameObject:
   - component: {fileID: 72158758}
   - component: {fileID: 72158757}
   - component: {fileID: 72158756}
+  - component: {fileID: 72158759}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -370,12 +371,27 @@ Transform:
   m_GameObject: {fileID: 72158755}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 8, y: 22, z: 6}
+  m_LocalPosition: {x: 15.42, y: 6.93, z: -2.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
+--- !u!114 &72158759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72158755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b519db7e2056502458d78ef5de27d8b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1047608175}
+  offset: {x: 0, y: 10, z: 0}
+  smoothSpeed: 0.125
 --- !u!1001 &88014724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2009,6 +2025,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1165326472}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Size.x
+      value: 12.269126
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Center.x
+      value: 2.815311
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Center.z
+      value: -0.5000001
+      objectReference: {fileID: 0}
     - target: {fileID: 5567953937471454120, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2086,10 +2118,38 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 910709437}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Size.x
+      value: 8.48164
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Size.z
+      value: 0.4043305
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Center.x
+      value: 3.7408204
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Center.z
+      value: -0.29783475
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5567953937471454120, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 910709437}
+    - target: {fileID: 5567953937471454120, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6323110656268701660, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.7879398
@@ -3583,6 +3643,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1952206172}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Size.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191033794256856413, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
+      propertyPath: m_Center.z
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5567953937471454120, guid: d0c04b36b0bd5f34ab7212173df0782f, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -6340,7 +6408,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 72158758}
   - {fileID: 1566397312}
   - {fileID: 1770692073}
   - {fileID: 298741500}
@@ -6387,3 +6454,4 @@ SceneRoots:
   - {fileID: 1815842606}
   - {fileID: 1914860995}
   - {fileID: 6300153511248623492}
+  - {fileID: 72158758}
