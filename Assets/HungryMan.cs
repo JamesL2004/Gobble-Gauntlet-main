@@ -135,6 +135,13 @@ public class HungryMan : MonoBehaviour
                     GameManager.speed = localSpeed;
                     SceneManager.LoadScene("Level3");
                 }
+                else if (currentScene.name == "Level1_2")
+                {
+                    Debug.Log("Ded... GAME OVER");
+                    GameManager.score = 0;
+                    GameManager.speed = 0.007f;
+                    SceneManager.LoadScene("Level1_2");
+                }
             }
         }
         else if (other.transform.gameObject.name.StartsWith("Goal"))
