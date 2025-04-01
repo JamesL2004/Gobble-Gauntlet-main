@@ -72,7 +72,7 @@ public class HungryMan : MonoBehaviour
             Destroy(other.gameObject);
             livesUI.text = "Lives: " + GameManager.lives.ToString();
         }
-        else if (other.transform.gameObject.name.StartsWith("WallA") || other.transform.gameObject.name.StartsWith("Wander") || other.transform.gameObject.name.StartsWith("Seek"))
+        else if (other.transform.gameObject.name.StartsWith("Follow") || other.transform.gameObject.name.StartsWith("Seek"))
         {
             Scene currentScene = SceneManager.GetActiveScene();
             if (GameManager.lives == 1)
@@ -137,7 +137,8 @@ public class HungryMan : MonoBehaviour
                 }
                 else if (currentScene.name == "Level1_2")
                 {
-                    Debug.Log("Ded... GAME OVER");
+                    Debug.Log("Ded... restart level");
+                    GameManager.lives--;
                     GameManager.score = 0;
                     GameManager.speed = 0.007f;
                     SceneManager.LoadScene("Level1_2");
@@ -149,10 +150,12 @@ public class HungryMan : MonoBehaviour
             Scene currentScene = SceneManager.GetActiveScene();
             if (currentScene != null)
             {
-                if(currentScene.name == "Level1")
+                if(currentScene.name == "Level1_2")
                 {
                     Debug.Log("Reached end of level, go to next one");
-                    SceneManager.LoadScene("Level2");
+                    SceneManager.LoadScene("Menu");
+                    GameManager.score = 0;
+                    GameManager.speed = 0.007f;
                 }
                 else if(currentScene.name == "Level2")
                 {

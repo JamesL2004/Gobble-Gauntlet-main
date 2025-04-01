@@ -12,7 +12,7 @@ public class StartGame : MonoBehaviour
     public void BeginGame()
     {
         Debug.Log("Starting a new game");
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level1_2");
     }
 
     // Update is called once per frame

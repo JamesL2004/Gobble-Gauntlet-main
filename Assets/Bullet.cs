@@ -1,6 +1,7 @@
 using UnityEngine;
 using System;
 using Random = System.Random;
+using System.Threading;
 
 public class Bullet : MonoBehaviour
 {
@@ -42,15 +43,20 @@ public class Bullet : MonoBehaviour
     {
         Random random = new Random();
         double randomDouble = random.NextDouble();
-        if (other.transform.gameObject.name.StartsWith("Wall") || other.transform.gameObject.name.StartsWith("Wander") || other.transform.gameObject.name.StartsWith("Seek"))
+        if (other.transform.gameObject.name.StartsWith("Follow") || other.transform.gameObject.name.StartsWith("Seek"))
         {
-            if(randomDouble > 0.5)
+            if(randomDouble > 0.2)
             {
+                GameManager.score += 100;
                 Destroy(other.gameObject);
                 Destroy(this.gameObject);
             }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
-        else if (other.transform.gameObject.name.Contains("Wall"))
+        else if(other.transform.gameObject.name.Contains("Wall") || other.transform.gameObject.name.Contains("Pillar") || other.transform.gameObject.name.Contains("Podest"))
         {
             Destroy(this.gameObject);
         }
