@@ -1243,7 +1243,7 @@ MonoBehaviour:
   livesUI: {fileID: 0}
   localScore: 0
   localSpeed: 0
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 6862357082094640222, guid: 77c3fee90593eb34c8ad49467742c33e, type: 3}
 --- !u!1 &2042085388
 GameObject:
   m_ObjectHideFlags: 0

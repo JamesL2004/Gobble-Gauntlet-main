@@ -100,13 +100,6 @@ public class HungryMan : MonoBehaviour
                         GameManager.speed = 0.007f;
                         SceneManager.LoadScene("Menu");
                     }
-                    else if (currentScene.name == "Level1_2")
-                    {
-                        Debug.Log("Ded... GAME OVER");
-                        GameManager.score = 0;
-                        GameManager.speed = 0.007f;
-                        SceneManager.LoadScene("Level1_2");
-                    }
                 }
             }
             else if(GameManager.lives > 1)
@@ -135,14 +128,6 @@ public class HungryMan : MonoBehaviour
                     GameManager.speed = localSpeed;
                     SceneManager.LoadScene("Level3");
                 }
-                else if (currentScene.name == "Level1_2")
-                {
-                    Debug.Log("Ded... restart level");
-                    GameManager.lives--;
-                    GameManager.score = 0;
-                    GameManager.speed = 0.007f;
-                    SceneManager.LoadScene("Level1_2");
-                }
             }
         }
         else if (other.transform.gameObject.name.StartsWith("Goal"))
@@ -150,10 +135,10 @@ public class HungryMan : MonoBehaviour
             Scene currentScene = SceneManager.GetActiveScene();
             if (currentScene != null)
             {
-                if(currentScene.name == "Level1_2")
+                if(currentScene.name == "Level1")
                 {
                     Debug.Log("Reached end of level, go to next one");
-                    SceneManager.LoadScene("Menu");
+                    SceneManager.LoadScene("Level2");
                     GameManager.score = 0;
                     GameManager.speed = 0.007f;
                 }
