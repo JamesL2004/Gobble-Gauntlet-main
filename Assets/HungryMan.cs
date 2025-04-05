@@ -145,7 +145,7 @@ public class HungryMan : MonoBehaviour
                 else if(currentScene.name == "Level2")
                 {
                     Debug.Log("Reached end of level, go to next one");
-                    SceneManager.LoadScene("Menu");
+                    SceneManager.LoadScene("Level3");
                 }
                 else if(currentScene.name == "Level3")
                 {
