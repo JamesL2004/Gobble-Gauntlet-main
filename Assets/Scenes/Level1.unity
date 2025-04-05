@@ -2923,8 +2923,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -459.35852, y: -234}
-  m_SizeDelta: {x: 202.6588, y: 54.705}
+  m_AnchoredPosition: {x: -352.78925, y: -234}
+  m_SizeDelta: {x: 415.7974, y: 54.705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &758668251
 MonoBehaviour:
@@ -8006,6 +8006,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 3106
       objectReference: {fileID: 0}
+    - target: {fileID: 5287170514137242365, guid: b673c4619854478418cfe6047245ed96, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: da0bd39a417178f4295bea284e53228e, type: 2}
     - target: {fileID: 8153590563904791936, guid: b673c4619854478418cfe6047245ed96, type: 3}
       propertyPath: m_Mesh
       value: 
