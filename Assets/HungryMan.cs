@@ -8,6 +8,7 @@ public class HungryMan : MonoBehaviour
     //I also made it so the score and speed values now transfer over each time a level changes and resets after finishing Level 3
     public Text scoreUI;
     public Text livesUI;
+    public Text ammoUI;
     public int localScore;
     public float localSpeed;
     public GameObject bulletPrefab;
@@ -16,8 +17,10 @@ public class HungryMan : MonoBehaviour
     {
         scoreUI = GameObject.Find("ScoreUI").GetComponent<Text>();
         livesUI = GameObject.Find("LivesText").GetComponent<Text>();
+        ammoUI = GameObject.Find("AmmoUI").GetComponent <Text>();
         scoreUI.text = "Score: " + GameManager.score.ToString();
         livesUI.text = "Lives: " + GameManager.lives.ToString();
+        ammoUI.text = "Ammo Left: " + GameManager.ammo.ToString();
         localScore = GameManager.score;
         localSpeed = GameManager.speed;
     }
@@ -47,7 +50,16 @@ public class HungryMan : MonoBehaviour
         }
         else if(Input.GetMouseButtonDown(0))
         {
-            Instantiate(bulletPrefab);
+            if (GameManager.ammo > 0)
+            {
+                Instantiate(bulletPrefab);
+                GameManager.ammo--;
+                ammoUI.text = "Ammo Left: " + GameManager.ammo.ToString();
+            }
+            else
+            {
+                Debug.Log("No more ammo go find some more.");
+            }
         }
     }
 
@@ -72,6 +84,13 @@ public class HungryMan : MonoBehaviour
             Destroy(other.gameObject);
             livesUI.text = "Lives: " + GameManager.lives.ToString();
         }
+        else if (other.transform.gameObject.name.StartsWith("AmmoPickup"))
+        {
+            Debug.Log("+3 Ammo");
+            GameManager.ammo += 3;
+            Destroy(other.gameObject);
+            ammoUI.text = "Ammo Left: " + GameManager.ammo.ToString();
+        }
         else if (other.transform.gameObject.name.StartsWith("Follow") || other.transform.gameObject.name.StartsWith("Seek"))
         {
             Scene currentScene = SceneManager.GetActiveScene();
@@ -84,6 +103,7 @@ public class HungryMan : MonoBehaviour
                         Debug.Log("Ded... GAME OVER");
                         GameManager.score = 0;
                         GameManager.speed = 0.007f;
+                        GameManager.lives = 3;
                         SceneManager.LoadScene("Menu");
                     }
                     else if (currentScene.name == "Level2")
@@ -91,6 +111,7 @@ public class HungryMan : MonoBehaviour
                         Debug.Log("Ded... GAME OVER");
                         GameManager.score = 0;
                         GameManager.speed = 0.007f;
+                        GameManager.lives = 3;
                         SceneManager.LoadScene("Menu");
                     }
                     else if (currentScene.name == "Level3")
@@ -98,6 +119,7 @@ public class HungryMan : MonoBehaviour
                         Debug.Log("Ded... GAME OVER");
                         GameManager.score = 0;
                         GameManager.speed = 0.007f;
+                        GameManager.lives = 3;
                         SceneManager.LoadScene("Menu");
                     }
                 }
@@ -139,8 +161,6 @@ public class HungryMan : MonoBehaviour
                 {
                     Debug.Log("Reached end of level, go to next one");
                     SceneManager.LoadScene("Level2");
-                    GameManager.score = 0;
-                    GameManager.speed = 0.007f;
                 }
                 else if(currentScene.name == "Level2")
                 {
