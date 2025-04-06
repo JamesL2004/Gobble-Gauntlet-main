@@ -120,7 +120,7 @@ public class HungryMan : MonoBehaviour
                         GameManager.score = 0;
                         GameManager.speed = 0.007f;
                         GameManager.lives = 3;
-                        SceneManager.LoadScene("Menu");
+                        SceneManager.LoadScene("VictoryScene");
                     }
                 }
             }
@@ -170,8 +170,7 @@ public class HungryMan : MonoBehaviour
                 else if(currentScene.name == "Level3")
                 {
                     Debug.Log("Reached end of level, go to next one");
-                    SceneManager.LoadScene("Menu");
-                    GameManager.score = 0;
+                    SceneManager.LoadScene("VictoryScene");
                     GameManager.speed = 0.007f;
                 }
             }
