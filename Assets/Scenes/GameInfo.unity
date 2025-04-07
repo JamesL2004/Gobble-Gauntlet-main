@@ -691,7 +691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.2, y: -355}
+  m_AnchoredPosition: {x: 10.2, y: -333}
   m_SizeDelta: {x: 214.873, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &457018846
@@ -862,7 +862,7 @@ MonoBehaviour:
     level and pick-up score points. There are no saves in your game you only have
     3 lives to reach the bottom of the gauntlet. \n\nOn your adventure you will encounter
     a different kinds of enemies. To deal with them you can use your left mouse click
-    to fire bullets that have a 80% chance to Kill the enemies. You will also stumble
+    to fire bullets that have a 70% chance to Kill the enemies. You will also stumble
     upon different kinds of power-ups that will help you on your adventure. "
 --- !u!222 &624597102
 CanvasRenderer:

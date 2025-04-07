@@ -49,7 +49,7 @@ public class Bullet : MonoBehaviour
         double randomDouble = random.NextDouble();
         if (other.transform.gameObject.name.StartsWith("Follow") || other.transform.gameObject.name.StartsWith("Seek"))
         {
-            if(randomDouble > 0.2)
+            if(randomDouble > 0.3)
             {
                 GameManager.score += 100;
                 scoreUI.text = "Score: " + GameManager.score.ToString();
